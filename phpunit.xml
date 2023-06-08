@@ -1,0 +1,15 @@
+<phpunit bootstrap="vendor/autoload.php" colors="true" stopOnFailure="false">
+    <testsuites>
+        <testsuite name="DVSA MOT FeatureToggle Test Suite">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <exclude>
+            <directory>./vendor</directory>
+        </exclude>
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+    </coverage>
+</phpunit>

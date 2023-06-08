@@ -1,0 +1,10 @@
+<?php
+/**
+ * This config file contains the current feature toggles.
+ */
+
+return [
+    'feature_toggle' => [
+        'authentication' => true
+    ]
+];

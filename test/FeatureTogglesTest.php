@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -15,9 +16,9 @@ use PHPUnit\Framework\TestCase;
  */
 class FeatureTogglesTest extends TestCase
 {
-    const FEATURE_RBAC = 'rbac';
-    const FEATURE_AUTHORIZE = 'authorize';
-    const FEATURE_LOGIN_V2 = 'loginV2';
+    private const FEATURE_RBAC = 'rbac';
+    private const FEATURE_AUTHORIZE = 'authorize';
+    private const FEATURE_LOGIN_V2 = 'loginV2';
 
     /**
      * @var FeatureToggles

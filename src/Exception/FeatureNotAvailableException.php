@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -33,8 +34,10 @@ class FeatureNotAvailableException extends RuntimeException
     {
         $this->featureName = $featureName;
         if (!$message) {
-            $message = sprintf('Feature "%s" is either disabled or not available in the current application configuration.',
-                $featureName);
+            $message = sprintf(
+                'Feature "%s" is either disabled or not available in the current application configuration.',
+                $featureName
+            );
         }
 
         parent::__construct($message, $code, $previous);

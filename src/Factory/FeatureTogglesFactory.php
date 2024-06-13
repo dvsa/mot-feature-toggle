@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -31,4 +32,3 @@ class FeatureTogglesFactory implements FactoryInterface
         return new FeatureToggles($features);
     }
 }
- 

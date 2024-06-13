@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -13,8 +14,8 @@ use PHPUnit\Framework\TestCase;
 
 class FeatureToggleViewHelperTest extends TestCase
 {
-    const ENABLED_FEATURE  = 'enabledFeature';
-    const DISABLED_FEATURE = 'disabledFeature';
+    private const ENABLED_FEATURE  = 'enabledFeature';
+    private const DISABLED_FEATURE = 'disabledFeature';
 
     /**
      * @var FeatureToggles

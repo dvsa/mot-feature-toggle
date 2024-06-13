@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -12,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class FeatureNotAvailableExceptionTest extends TestCase
 {
-    const FEATURE_NAME = 'featureName';
+    private const FEATURE_NAME = 'featureName';
 
     public function testPassingAnEmptyMessageTriggersMessageBuilding()
     {

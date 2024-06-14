@@ -41,6 +41,9 @@ class FeatureTogglesTest extends TestCase
         $this->featureToggles = new FeatureToggles($this->features);
     }
 
+    /**
+     * @return void
+     */
     public function testGetFeatureToggles()
     {
         $this->assertEquals($this->features, $this->featureToggles->getFeatureToggles());
@@ -48,6 +51,8 @@ class FeatureTogglesTest extends TestCase
 
     /**
      * @test
+     *
+     * @return void
      */
     public function canFetchFeatureToggleEnabled()
     {
@@ -58,6 +63,8 @@ class FeatureTogglesTest extends TestCase
 
     /**
      * @test
+     *
+     * @return void
      */
     public function canFetchFeatureToggleDisabled()
     {

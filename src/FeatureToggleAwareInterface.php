@@ -8,6 +8,8 @@
 
 namespace DvsaFeature;
 
+use Throwable;
+
 /**
  * The interface for classes that are aware of features status.
  */
@@ -23,7 +25,9 @@ interface FeatureToggleAwareInterface
     /**
      * @param string $name
      *
-     * @throws FeatureNotAvailableException
+     * @throws FeatureNotAvailableException&Throwable
+     *
+     * @return void
      */
     public function assertFeatureEnabled($name);
 }

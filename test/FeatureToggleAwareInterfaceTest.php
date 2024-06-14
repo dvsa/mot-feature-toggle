@@ -14,6 +14,9 @@ use ReflectionClass;
 
 class FeatureToggleAwareInterfaceTest extends TestCase
 {
+    /**
+     * @return void
+     */
     public function testMethodsAreDefined()
     {
         $interface = new ReflectionClass(FeatureToggleAwareInterface::class);

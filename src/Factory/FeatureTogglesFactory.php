@@ -26,7 +26,7 @@ class FeatureTogglesFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $name, array $args = null)
     {
         $config   = $container->get('config');
-        $features = (isset($config['feature_toggle']) && is_array($config['feature_toggle'])) ?
+        $features = (is_array($config) && isset($config['feature_toggle']) && is_array($config['feature_toggle'])) ?
             $config['feature_toggle'] : [];
 
         return new FeatureToggles($features);

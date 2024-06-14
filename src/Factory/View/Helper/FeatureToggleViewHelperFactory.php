@@ -9,6 +9,7 @@
 namespace DvsaFeature\Factory\View\Helper;
 
 use DvsaFeature\View\Helper\FeatureToggleViewHelper;
+use DvsaFeature\FeatureToggles;
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
@@ -22,6 +23,7 @@ class FeatureToggleViewHelperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $name, array $args = null)
     {
+        /** @var FeatureToggles */
         $featureToggles = $container->get('Feature\FeatureToggles');
 
         return new FeatureToggleViewHelper($featureToggles);

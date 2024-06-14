@@ -32,6 +32,8 @@ class FeatureToggleViewHelper extends AbstractHelper implements FeatureToggleAwa
     }
 
     /**
+     * @param string $name
+     *
      * @return bool
      */
     public function __invoke($name)

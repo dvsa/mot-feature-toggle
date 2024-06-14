@@ -37,7 +37,7 @@ class FeatureToggles
     }
 
     /**
-     * @param $name
+     * @param mixed $name
      *
      * @return bool
      */
@@ -51,7 +51,7 @@ class FeatureToggles
     }
 
     /**
-     * @param $name
+     * @param mixed $name
      *
      * @return bool
      */

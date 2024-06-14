@@ -37,6 +37,9 @@ class FeatureToggleViewHelperTest extends TestCase
             ]));
     }
 
+    /**
+     * @return void
+     */
     public function testInvoke()
     {
         $helper = new FeatureToggleViewHelper($this->featureToggles);
@@ -44,12 +47,18 @@ class FeatureToggleViewHelperTest extends TestCase
         $this->assertFalse($helper(self::DISABLED_FEATURE));
     }
 
+    /**
+     * @return void
+     */
     public function testGetFeatureToggles()
     {
         $helper = new FeatureToggleViewHelper($this->featureToggles);
         $this->assertEquals($this->featureToggles, $helper->getFeatureToggles());
     }
 
+    /**
+     * @return void
+     */
     public function testIsFeatureEnabled()
     {
         $helper = new FeatureToggleViewHelper($this->featureToggles);

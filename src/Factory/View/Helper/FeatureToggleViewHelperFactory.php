@@ -10,8 +10,8 @@ namespace DvsaFeature\Factory\View\Helper;
 
 use DvsaFeature\View\Helper\FeatureToggleViewHelper;
 use DvsaFeature\FeatureToggles;
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Factory for the FeatureToggleViewHelper service.

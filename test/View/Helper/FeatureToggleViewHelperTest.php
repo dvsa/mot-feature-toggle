@@ -24,17 +24,20 @@ class FeatureToggleViewHelperTest extends TestCase
 
     public function setUp(): void
     {
-        $this->featureToggles = $this
+        $featureToggles = $this
             ->getMockBuilder(FeatureToggles::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->featureToggles
+
+        $featureToggles
             ->expects($this->any())
             ->method('isEnabled')
             ->will($this->returnValueMap([
                 [self::ENABLED_FEATURE, true],
                 [self::DISABLED_FEATURE, false],
             ]));
+
+        $this->featureToggles = $featureToggles;
     }
 
     /**

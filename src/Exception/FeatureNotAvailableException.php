@@ -10,12 +10,13 @@ namespace DvsaFeature\Exception;
 
 use Exception;
 use RuntimeException;
+use Throwable;
 
 /**
  * FeatureNotAvailableException is used to signal the client that a feature is not available or is disabled in the
  * FeatureToggles service.
  */
-class FeatureNotAvailableException extends RuntimeException
+class FeatureNotAvailableException extends RuntimeException implements Throwable
 {
     /**
      * @var string

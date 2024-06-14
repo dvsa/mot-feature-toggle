@@ -9,9 +9,8 @@
 namespace DvsaFeature\Factory;
 
 use DvsaFeature\FeatureToggles;
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
-use Laminas\ServiceManager\ServiceLocatorInterface;
+use Psr\Container\ContainerInterface;
 
 class FeatureTogglesFactory implements FactoryInterface
 {

@@ -8,7 +8,7 @@
 
 namespace DvsaFeature;
 
-use Throwable;
+use DvsaFeature\Exception\FeatureNotAvailableException;
 
 /**
  * The interface for classes that are aware of features status.
@@ -25,7 +25,7 @@ interface FeatureToggleAwareInterface
     /**
      * @param string $name
      *
-     * @throws FeatureNotAvailableException&Throwable
+     * @throws FeatureNotAvailableException
      *
      * @return void
      */

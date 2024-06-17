@@ -21,14 +21,9 @@ class FeatureTogglesTest extends TestCase
     private const FEATURE_LOGIN_V2 = 'loginV2';
 
     /**
-     * @var FeatureToggles
-     */
-    private $featureToggles;
-
-    /**
      * @var array
      */
-    private $features;
+    private $features = [];
 
     public function setUp(): void
     {
@@ -37,8 +32,11 @@ class FeatureTogglesTest extends TestCase
             self::FEATURE_AUTHORIZE => true,
             self::FEATURE_LOGIN_V2  => false,
         ];
+    }
 
-        $this->featureToggles = new FeatureToggles($this->features);
+    private function getFeatureToggles(): FeatureToggles
+    {
+        return new FeatureToggles($this->features);
     }
 
     /**
@@ -46,7 +44,8 @@ class FeatureTogglesTest extends TestCase
      */
     public function testGetFeatureToggles()
     {
-        $this->assertEquals($this->features, $this->featureToggles->getFeatureToggles());
+        $featureToggles = $this->getFeatureToggles();
+        $this->assertEquals($this->features, $featureToggles->getFeatureToggles());
     }
 
     /**
@@ -56,9 +55,10 @@ class FeatureTogglesTest extends TestCase
      */
     public function canFetchFeatureToggleEnabled()
     {
-        $this->assertTrue($this->featureToggles->isEnabled(self::FEATURE_RBAC));
-        $this->assertTrue($this->featureToggles->isEnabled(self::FEATURE_AUTHORIZE));
-        $this->assertFalse($this->featureToggles->isEnabled(self::FEATURE_LOGIN_V2));
+        $featureToggles = $this->getFeatureToggles();
+        $this->assertTrue($featureToggles->isEnabled(self::FEATURE_RBAC));
+        $this->assertTrue($featureToggles->isEnabled(self::FEATURE_AUTHORIZE));
+        $this->assertFalse($featureToggles->isEnabled(self::FEATURE_LOGIN_V2));
     }
 
     /**
@@ -68,8 +68,9 @@ class FeatureTogglesTest extends TestCase
      */
     public function canFetchFeatureToggleDisabled()
     {
-        $this->assertFalse($this->featureToggles->isDisabled(self::FEATURE_RBAC));
-        $this->assertFalse($this->featureToggles->isDisabled(self::FEATURE_AUTHORIZE));
-        $this->assertTrue($this->featureToggles->isDisabled(self::FEATURE_LOGIN_V2));
+        $featureToggles = $this->getFeatureToggles();
+        $this->assertFalse($featureToggles->isDisabled(self::FEATURE_RBAC));
+        $this->assertFalse($featureToggles->isDisabled(self::FEATURE_AUTHORIZE));
+        $this->assertTrue($featureToggles->isDisabled(self::FEATURE_LOGIN_V2));
     }
 }

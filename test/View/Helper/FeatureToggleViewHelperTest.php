@@ -11,18 +11,15 @@ namespace DvsaFeatureTest\View\Helper;
 use DvsaFeature\FeatureToggles;
 use DvsaFeature\View\Helper\FeatureToggleViewHelper;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 
 class FeatureToggleViewHelperTest extends TestCase
 {
     private const ENABLED_FEATURE  = 'enabledFeature';
     private const DISABLED_FEATURE = 'disabledFeature';
 
-    /**
-     * @var FeatureToggles
-     */
-    private $featureToggles;
-
-    public function setUp(): void
+    /** @return FeatureToggles&MockObject */
+    private function getFeatureToggles()
     {
         $featureToggles = $this
             ->getMockBuilder(FeatureToggles::class)
@@ -37,7 +34,7 @@ class FeatureToggleViewHelperTest extends TestCase
                 [self::DISABLED_FEATURE, false],
             ]));
 
-        $this->featureToggles = $featureToggles;
+        return $featureToggles;
     }
 
     /**
@@ -45,7 +42,7 @@ class FeatureToggleViewHelperTest extends TestCase
      */
     public function testInvoke()
     {
-        $helper = new FeatureToggleViewHelper($this->featureToggles);
+        $helper = new FeatureToggleViewHelper($this->getFeatureToggles());
         $this->assertTrue($helper(self::ENABLED_FEATURE));
         $this->assertFalse($helper(self::DISABLED_FEATURE));
     }
@@ -55,8 +52,9 @@ class FeatureToggleViewHelperTest extends TestCase
      */
     public function testGetFeatureToggles()
     {
-        $helper = new FeatureToggleViewHelper($this->featureToggles);
-        $this->assertEquals($this->featureToggles, $helper->getFeatureToggles());
+        $featureToggles = $this->getFeatureToggles();
+        $helper = new FeatureToggleViewHelper($featureToggles);
+        $this->assertEquals($featureToggles, $helper->getFeatureToggles());
     }
 
     /**
@@ -64,7 +62,7 @@ class FeatureToggleViewHelperTest extends TestCase
      */
     public function testIsFeatureEnabled()
     {
-        $helper = new FeatureToggleViewHelper($this->featureToggles);
+        $helper = new FeatureToggleViewHelper($this->getFeatureToggles());
         $this->assertTrue($helper->isFeatureEnabled(self::ENABLED_FEATURE));
         $this->assertFalse($helper->isFeatureEnabled(self::DISABLED_FEATURE));
     }

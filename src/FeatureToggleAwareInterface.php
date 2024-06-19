@@ -15,11 +15,6 @@ use DvsaFeature\Exception\FeatureNotAvailableException;
  */
 interface FeatureToggleAwareInterface
 {
-    /**
-     * @param string $name
-     *
-     * @return bool
-     */
     public function isFeatureEnabled($name);
 
     /**

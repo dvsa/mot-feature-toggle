@@ -20,9 +20,10 @@ class FeatureTogglesTest extends TestCase
     private const FEATURE_AUTHORIZE = 'authorize';
     private const FEATURE_LOGIN_V2 = 'loginV2';
 
-    /**
-     * @var array
-     */
+/**
+ * @var array
+ */
+
     private $features = [];
 
     public function setUp(): void
@@ -44,6 +45,7 @@ class FeatureTogglesTest extends TestCase
      */
     public function testGetFeatureToggles()
     {
+        // Add some comment
         $featureToggles = $this->getFeatureToggles();
         $this->assertEquals($this->features, $featureToggles->getFeatureToggles());
     }

@@ -43,9 +43,9 @@ class FeatureTogglesTest extends TestCase
     /**
      * @return void
      */
+
     public function testGetFeatureToggles()
     {
-        // Add some comment
         $featureToggles = $this->getFeatureToggles();
         $this->assertEquals($this->features, $featureToggles->getFeatureToggles());
     }

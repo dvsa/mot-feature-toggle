@@ -24,7 +24,7 @@ class FeatureTogglesTest extends TestCase
  * @var array
  */
 
-    private $features = [];
+    public $features = [];
 
     public function setUp(): void
     {

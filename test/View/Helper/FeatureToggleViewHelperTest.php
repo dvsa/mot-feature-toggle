@@ -37,30 +37,21 @@ class FeatureToggleViewHelperTest extends TestCase
         return $featureToggles;
     }
 
-    /**
-     * @return void
-     */
-    public function testInvoke()
+    public function testInvoke(): void
     {
         $helper = new FeatureToggleViewHelper($this->getFeatureToggles());
         $this->assertTrue($helper(self::ENABLED_FEATURE));
         $this->assertFalse($helper(self::DISABLED_FEATURE));
     }
 
-    /**
-     * @return void
-     */
-    public function testGetFeatureToggles()
+    public function testGetFeatureToggles(): void
     {
         $featureToggles = $this->getFeatureToggles();
         $helper = new FeatureToggleViewHelper($featureToggles);
         $this->assertEquals($featureToggles, $helper->getFeatureToggles());
     }
 
-    /**
-     * @return void
-     */
-    public function testIsFeatureEnabled()
+    public function testIsFeatureEnabled(): void
     {
         $helper = new FeatureToggleViewHelper($this->getFeatureToggles());
         $this->assertTrue($helper->isFeatureEnabled(self::ENABLED_FEATURE));

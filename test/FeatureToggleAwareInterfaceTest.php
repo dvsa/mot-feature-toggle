@@ -14,10 +14,7 @@ use ReflectionClass;
 
 class FeatureToggleAwareInterfaceTest extends TestCase
 {
-    /**
-     * @return void
-     */
-    public function testMethodsAreDefined()
+    public function testMethodsAreDefined(): void
     {
         $interface = new ReflectionClass(FeatureToggleAwareInterface::class);
         $this->assertTrue($interface->hasMethod('isFeatureEnabled'));

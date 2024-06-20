@@ -15,29 +15,20 @@ class FeatureNotAvailableExceptionTest extends TestCase
 {
     private const FEATURE_NAME = 'featureName';
 
-    /**
-     * @return void
-     */
-    public function testPassingAnEmptyMessageTriggersMessageBuilding()
+    public function testPassingAnEmptyMessageTriggersMessageBuilding(): void
     {
         $exception = new FeatureNotAvailableException(self::FEATURE_NAME);
         $this->assertNotEmpty($exception->getMessage());
     }
 
-    /**
-     * @return void
-     */
-    public function testPassingANonEmptyMessageSkipsMessageBuilding()
+    public function testPassingANonEmptyMessageSkipsMessageBuilding(): void
     {
         $message   = 'This message overrides the default message created in FeatureNotAvailableExceptionTest::__construct';
         $exception = new FeatureNotAvailableException(self::FEATURE_NAME, $message);
         $this->assertEquals($message, $exception->getMessage());
     }
 
-    /**
-     * @return void
-     */
-    public function testGetFeatureName()
+    public function testGetFeatureName(): void
     {
         $exception = new FeatureNotAvailableException(self::FEATURE_NAME);
         $this->assertEquals(self::FEATURE_NAME, $exception->getFeatureName());

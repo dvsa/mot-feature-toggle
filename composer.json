@@ -2,8 +2,8 @@
     "name": "dvsa/mot-feature-toggle",
     "description": "Shared facility to toggle functionality within the codebase",
     "require": {
-        "php": "^8.1",
-        "laminas/laminas-dependency-plugin": "^2",
+        "php": "^8.2",
+        "laminas/laminas-dependency-plugin": "^2.6.0",
         "laminas/laminas-servicemanager": "^3.10.0",
         "laminas/laminas-view": "^2.10"
     },
@@ -29,9 +29,10 @@
     "scripts": {
         "test": "phpunit",
         "phpcs": "./vendor/bin/phpcs .",
+        "phpcs-fix": "./vendor/bin/phpcbf .",
         "psalm": "./vendor/bin/psalm" ,
         "phpstan": "vendor/bin/phpstan analyse"
-        
+
     },
     "config": {
         "allow-plugins": {

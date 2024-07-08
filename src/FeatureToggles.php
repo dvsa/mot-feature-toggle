@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -12,7 +13,7 @@ namespace DvsaFeature;
  */
 class FeatureToggles
 {
-    const EXCEPTION_FEATURE_NOT_STRING = "The feature name must be a string.";
+    private const EXCEPTION_FEATURE_NOT_STRING = "The feature name must be a string.";
 
     /**
      * @var array
@@ -36,7 +37,7 @@ class FeatureToggles
     }
 
     /**
-     * @param $name
+     * @param mixed $name
      *
      * @return bool
      */
@@ -50,7 +51,7 @@ class FeatureToggles
     }
 
     /**
-     * @param $name
+     * @param mixed $name
      *
      * @return bool
      */

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -13,7 +14,7 @@ use ReflectionClass;
 
 class FeatureToggleAwareInterfaceTest extends TestCase
 {
-    public function testMethodsAreDefined()
+    public function testMethodsAreDefined(): void
     {
         $interface = new ReflectionClass(FeatureToggleAwareInterface::class);
         $this->assertTrue($interface->hasMethod('isFeatureEnabled'));

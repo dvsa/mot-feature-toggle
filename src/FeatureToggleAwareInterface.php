@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -6,6 +7,8 @@
  */
 
 namespace DvsaFeature;
+
+use DvsaFeature\Exception\FeatureNotAvailableException;
 
 /**
  * The interface for classes that are aware of features status.
@@ -23,6 +26,8 @@ interface FeatureToggleAwareInterface
      * @param string $name
      *
      * @throws FeatureNotAvailableException
+     *
+     * @return void
      */
     public function assertFeatureEnabled($name);
 }

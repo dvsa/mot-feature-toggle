@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -31,6 +32,8 @@ class FeatureToggleViewHelper extends AbstractHelper implements FeatureToggleAwa
     }
 
     /**
+     * @param string $name
+     *
      * @return bool
      */
     public function __invoke($name)

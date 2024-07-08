@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -9,12 +10,13 @@ namespace DvsaFeature\Exception;
 
 use Exception;
 use RuntimeException;
+use Throwable;
 
 /**
  * FeatureNotAvailableException is used to signal the client that a feature is not available or is disabled in the
  * FeatureToggles service.
  */
-class FeatureNotAvailableException extends RuntimeException
+class FeatureNotAvailableException extends RuntimeException implements Throwable
 {
     /**
      * @var string
@@ -33,8 +35,10 @@ class FeatureNotAvailableException extends RuntimeException
     {
         $this->featureName = $featureName;
         if (!$message) {
-            $message = sprintf('Feature "%s" is either disabled or not available in the current application configuration.',
-                $featureName);
+            $message = sprintf(
+                'Feature "%s" is either disabled or not available in the current application configuration.',
+                $featureName
+            );
         }
 
         parent::__construct($message, $code, $previous);

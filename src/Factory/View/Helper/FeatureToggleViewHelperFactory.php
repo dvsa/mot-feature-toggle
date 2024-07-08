@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the DVSA MOT FeatureToggle package.
  *
@@ -8,8 +9,9 @@
 namespace DvsaFeature\Factory\View\Helper;
 
 use DvsaFeature\View\Helper\FeatureToggleViewHelper;
-use Interop\Container\ContainerInterface;
+use DvsaFeature\FeatureToggles;
 use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Factory for the FeatureToggleViewHelper service.
@@ -21,6 +23,7 @@ class FeatureToggleViewHelperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $name, array $args = null)
     {
+        /** @var FeatureToggles */
         $featureToggles = $container->get('Feature\FeatureToggles');
 
         return new FeatureToggleViewHelper($featureToggles);
